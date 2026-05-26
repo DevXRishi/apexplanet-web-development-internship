@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Web Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">WebApp</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Professional Web Development</h1>
+            <p class="hero-subtitle">Building beautiful, interactive, and responsive experiences</p>
+            <button id="heroButton" class="btn btn-primary">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="section-wrapper">
+                <h2 class="section-title">About This Project</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="card-icon">📱</div>
+                        <h3>Responsive Design</h3>
+                        <p>Optimized for all devices, from mobile phones to desktop computers.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">⚡</div>
+                        <h3>Modern Technology</h3>
+                        <p>Built with the latest web standards and best practices.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">🎨</div>
+                        <h3>Clean Design</h3>
+                        <p>Minimalist approach with excellent user experience focus.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" id="features">
+            <div class="section-wrapper">
+                <h2 class="section-title">Why Choose Us</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-number">01</div>
+                        <h3>HTML5 Semantics</h3>
+                        <p>Properly structured semantic markup for better accessibility and SEO.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">02</div>
+                        <h3>CSS3 Styling</h3>
+                        <p>Modern CSS with flexbox, gradients, and smooth animations.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">03</div>
+                        <h3>JavaScript Interaction</h3>
+                        <p>Dynamic, interactive features with efficient DOM manipulation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Section -->
+        <section class="interactive-section">
+            <div class="section-wrapper">
+                <h2 class="section-title">Interactive Demo</h2>
+                <div class="demo-container">
+                    <p class="demo-text">Try the button below to see JavaScript in action:</p>
+                    <button id="myButton" class="btn btn-secondary">Click to Interact</button>
+                    <div id="messageBox" class="message-box hidden"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About</h4>
+                <p>A modern web development project showcasing HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <p>Follow us on social media for updates and insights.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Professional WebApp. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
