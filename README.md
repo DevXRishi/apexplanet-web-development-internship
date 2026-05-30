@@ -11,7 +11,11 @@ apexplanet-web-development-internship/
 │   ├── styles.css                  - CSS styling
 │   ├── script.js                   - JavaScript interactivity
 │   └── README.md                   - Task documentation
-├── task-2-*/                       - Coming soon
+├── task-2-forms-and-dom/           ✓ Completed
+│   ├── index.html                  - Contact form & to-do list
+│   ├── styles.css                  - Flexbox & CSS Grid layouts
+│   ├── script.js                   - Form validation & DOM manipulation
+│   └── README.md                   - Task documentation
 ├── task-3-*/                       - Coming soon
 ├── task-4-*/                       - Coming soon
 ├── task-5-*/                       - Coming soon
@@ -42,13 +46,32 @@ apexplanet-web-development-internship/
 - CSS3 (flexbox, gradients, animations)
 - Vanilla JavaScript (DOM manipulation, event handling)
 
-**Skills Demonstrated:**
-- Semantic HTML structure
-- Modern CSS design patterns
-- JavaScript event handling
-- Responsive web design
-- LocalStorage API
-- Git version control
+---
+
+### Task 2: Forms & DOM Manipulation ✅
+**Completed on:** May 30, 2026
+
+**Objectives:**
+- Enhance HTML and CSS skills
+- Learn JavaScript for DOM manipulation
+- Master form validation
+- Build responsive layouts with Flexbox and CSS Grid
+
+**Features:**
+- Professional contact form with validation
+- Real-time form field validation
+- Dynamic to-do list with add/delete functionality
+- Filter tasks by status (All/Active/Completed)
+- Task statistics dashboard
+- Responsive Flexbox navigation
+- Responsive CSS Grid layouts
+- LocalStorage persistence for tasks
+- Success/error messaging
+
+**Technologies Used:**
+- HTML5 (forms, semantic markup)
+- CSS3 (Flexbox, CSS Grid, media queries)
+- JavaScript (Form validation, DOM manipulation, LocalStorage API)
 
 ---
 
