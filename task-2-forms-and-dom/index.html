@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms & DOM Manipulation - Task 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">📋</span>
+                <span class="logo-text">Task 2</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#todo" class="nav-link">To-Do</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Forms & DOM Manipulation</h1>
+            <p class="hero-subtitle">Master HTML forms, CSS layouts, and JavaScript interactivity</p>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Contact Form Section -->
+        <section class="section" id="contact">
+            <div class="section-wrapper">
+                <h2 class="section-title">Contact Form</h2>
+                <p class="section-subtitle">Submit your information and we'll get back to you soon</p>
+
+                <div class="form-container">
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <!-- Name Field -->
+                        <div class="form-group">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input 
+                                type="text" 
+                                id="fullName" 
+                                name="fullName" 
+                                class="form-input" 
+                                placeholder="Enter your full name"
+                                required
+                            >
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="form-input" 
+                                placeholder="Enter your email"
+                                required
+                            >
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <!-- Phone Field -->
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                class="form-input" 
+                                placeholder="Enter your phone number"
+                            >
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+
+                        <!-- Subject Field -->
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <select id="subject" name="subject" class="form-input" required>
+                                <option value="">-- Select a subject --</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Support</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message" id="subjectError"></span>
+                        </div>
+
+                        <!-- Message Field -->
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                class="form-input form-textarea" 
+                                placeholder="Enter your message"
+                                rows="5"
+                                required
+                            ></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+
+                        <!-- Checkbox -->
+                        <div class="form-group checkbox-group">
+                            <input 
+                                type="checkbox" 
+                                id="subscribe" 
+                                name="subscribe" 
+                                class="form-checkbox"
+                            >
+                            <label for="subscribe" class="checkbox-label">Subscribe to our newsletter</label>
+                        </div>
+
+                        <!-- Success Message -->
+                        <div id="successMessage" class="success-message hidden">
+                            ✓ Form submitted successfully! We'll contact you soon.
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary btn-large">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- To-Do List Section -->
+        <section class="section" id="todo">
+            <div class="section-wrapper">
+                <h2 class="section-title">Dynamic To-Do List</h2>
+                <p class="section-subtitle">Organize your tasks and track your progress</p>
+
+                <div class="todo-container">
+                    <!-- Input Section -->
+                    <div class="todo-input-section">
+                        <div class="input-group">
+                            <input 
+                                type="text" 
+                                id="todoInput" 
+                                class="form-input" 
+                                placeholder="Add a new task..."
+                            >
+                            <button id="addTodoBtn" class="btn btn-primary">
+                                Add Task
+                            </button>
+                        </div>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="active">Active</button>
+                            <button class="filter-btn" data-filter="completed">Completed</button>
+                        </div>
+                    </div>
+
+                    <!-- Statistics -->
+                    <div class="todo-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Total:</span>
+                            <span class="stat-value" id="totalCount">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Active:</span>
+                            <span class="stat-value" id="activeCount">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Completed:</span>
+                            <span class="stat-value" id="completedCount">0</span>
+                        </div>
+                    </div>
+
+                    <!-- To-Do List Grid -->
+                    <div class="todo-grid" id="todoList">
+                        <!-- Tasks will be added here dynamically -->
+                    </div>
+
+                    <!-- Empty State -->
+                    <div id="emptyState" class="empty-state">
+                        <p>📝 No tasks yet. Add one to get started!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Task 2</h4>
+                <p>Learn forms, validation, and DOM manipulation with HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#todo">To-Do List</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Learning Outcomes</h4>
+                <p>Form handling, validation, Flexbox, CSS Grid, and DOM manipulation</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ApexPlanet Web Development Internship - Task 2</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
