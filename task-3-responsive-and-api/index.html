@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design & APIs - Task 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🎠</span>
+                <span class="logo-text">Task 3</span>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#carousel" class="nav-link">Carousel</a></li>
+                <li><a href="#quiz" class="nav-link">Quiz</a></li>
+                <li><a href="#api" class="nav-link">API Data</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Advanced Web Development</h1>
+            <p class="hero-subtitle">Responsive Design, Interactive Components & API Integration</p>
+            <button class="btn btn-primary btn-large" id="heroBtn">Start Exploring</button>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Image Carousel Section -->
+        <section class="section" id="carousel">
+            <div class="section-wrapper">
+                <h2 class="section-title">Image Carousel</h2>
+                <p class="section-subtitle">Interactive carousel with smooth transitions and controls</p>
+
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-slide active" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                <img src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=300&fit=crop" alt="Slide 1">
+                                <div class="slide-content">
+                                    <h3>Slide 1: Responsive Design</h3>
+                                    <p>Adapts beautifully to all screen sizes</p>
+                                </div>
+                            </div>
+
+                            <div class="carousel-slide" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop" alt="Slide 2">
+                                <div class="slide-content">
+                                    <h3>Slide 2: Interactive Components</h3>
+                                    <p>Engaging user interactions and animations</p>
+                                </div>
+                            </div>
+
+                            <div class="carousel-slide" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                <img src="https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=500&h=300&fit=crop" alt="Slide 3">
+                                <div class="slide-content">
+                                    <h3>Slide 3: API Integration</h3>
+                                    <p>Fetch and display real-time data</p>
+                                </div>
+                            </div>
+
+                            <div class="carousel-slide" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop" alt="Slide 4">
+                                <div class="slide-content">
+                                    <h3>Slide 4: User Experience</h3>
+                                    <p>Focus on smooth and intuitive interactions</p>
+                                </div>
+                            </div>
+
+                            <div class="carousel-slide" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                                <img src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=300&fit=crop" alt="Slide 5">
+                                <div class="slide-content">
+                                    <h3>Slide 5: Modern Web</h3>
+                                    <p>Building the future of the web</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carousel Controls -->
+                        <button class="carousel-control carousel-prev" id="carouselPrev">❮</button>
+                        <button class="carousel-control carousel-next" id="carouselNext">❯</button>
+
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators" id="carouselIndicators"></div>
+                    </div>
+
+                    <!-- Carousel Info -->
+                    <div class="carousel-info">
+                        <div class="info-item">
+                            <span class="info-label">Current Slide:</span>
+                            <span class="info-value" id="currentSlide">1 / 5</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Auto-play:</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="autoPlayToggle" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section class="section" id="quiz">
+            <div class="section-wrapper">
+                <h2 class="section-title">Interactive Quiz</h2>
+                <p class="section-subtitle">Test your web development knowledge</p>
+
+                <div class="quiz-container">
+                    <!-- Quiz Start Screen -->
+                    <div id="quizStart" class="quiz-screen active">
+                        <div class="quiz-header">
+                            <h3>Web Development Quiz</h3>
+                            <p>Answer 5 questions about HTML, CSS, and JavaScript</p>
+                        </div>
+                        <div class="quiz-stats">
+                            <div class="stat">
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">Questions</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">~2</span>
+                                <span class="stat-label">Minutes</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-large" id="startQuizBtn">Start Quiz</button>
+                    </div>
+
+                    <!-- Quiz Questions Screen -->
+                    <div id="quizQuestions" class="quiz-screen">
+                        <div class="quiz-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <span class="progress-text" id="progressText">Question 1 of 5</span>
+                        </div>
+
+                        <div class="question-container" id="questionContainer">
+                            <!-- Questions will be inserted here -->
+                        </div>
+
+                        <div class="quiz-navigation">
+                            <button class="btn btn-secondary" id="prevQuestionBtn" disabled>Previous</button>
+                            <button class="btn btn-primary" id="nextQuestionBtn">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Results Screen -->
+                    <div id="quizResults" class="quiz-screen">
+                        <div class="results-header">
+                            <h3>Quiz Complete!</h3>
+                            <div class="results-score">
+                                <span class="score-value" id="scoreValue">0</span>
+                                <span class="score-label">out of 100</span>
+                            </div>
+                        </div>
+
+                        <div class="results-details" id="resultsDetails">
+                            <!-- Results will be inserted here -->
+                        </div>
+
+                        <button class="btn btn-primary btn-large" id="retakeQuizBtn">Retake Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- API Data Section -->
+        <section class="section" id="api">
+            <div class="section-wrapper">
+                <h2 class="section-title">API Integration</h2>
+                <p class="section-subtitle">Fetch data from public APIs and display it dynamically</p>
+
+                <div class="api-container">
+                    <!-- API Selector -->
+                    <div class="api-selector">
+                        <label for="apiSelect" class="form-label">Choose an API:</label>
+                        <div class="select-group">
+                            <select id="apiSelect" class="form-select">
+                                <option value="quote">Random Quote</option>
+                                <option value="joke">Random Joke</option>
+                                <option value="user">Random User</option>
+                                <option value="activity">Random Activity</option>
+                            </select>
+                            <button class="btn btn-primary" id="fetchBtn">Fetch Data</button>
+                        </div>
+                    </div>
+
+                    <!-- Loading State -->
+                    <div id="loadingState" class="loading-state hidden">
+                        <div class="spinner"></div>
+                        <p>Loading data...</p>
+                    </div>
+
+                    <!-- Error State -->
+                    <div id="errorState" class="error-state hidden">
+                        <p id="errorMessage"></p>
+                        <button class="btn btn-secondary" onclick="document.getElementById('errorState').classList.add('hidden')">Dismiss</button>
+                    </div>
+
+                    <!-- Quote Display -->
+                    <div id="quoteDisplay" class="api-display hidden">
+                        <div class="quote-card">
+                            <p class="quote-text" id="quoteText"></p>
+                            <p class="quote-author" id="quoteAuthor"></p>
+                        </div>
+                    </div>
+
+                    <!-- Joke Display -->
+                    <div id="jokeDisplay" class="api-display hidden">
+                        <div class="joke-card">
+                            <p class="joke-setup" id="jokeSetup"></p>
+                            <p class="joke-punchline" id="jokePunchline"></p>
+                        </div>
+                    </div>
+
+                    <!-- User Display -->
+                    <div id="userDisplay" class="api-display hidden">
+                        <div class="user-card">
+                            <img id="userAvatar" class="user-avatar" src="" alt="User">
+                            <h3 id="userName" class="user-name"></h3>
+                            <p id="userEmail" class="user-email"></p>
+                            <p id="userLocation" class="user-location"></p>
+                        </div>
+                    </div>
+
+                    <!-- Activity Display -->
+                    <div id="activityDisplay" class="api-display hidden">
+                        <div class="activity-card">
+                            <h3 id="activityType" class="activity-type"></h3>
+                            <p id="activityDescription" class="activity-description"></p>
+                            <div class="activity-stats">
+                                <div class="activity-stat">
+                                    <span class="stat-label">Participants:</span>
+                                    <span class="stat-value" id="participants">0</span>
+                                </div>
+                                <div class="activity-stat">
+                                    <span class="stat-label">Price:</span>
+                                    <span class="stat-value" id="price">Free</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- API Response Info -->
+                    <div class="api-info">
+                        <div class="info-item">
+                            <span class="info-label">Last Fetch:</span>
+                            <span class="info-value" id="lastFetch">Never</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Total Fetches:</span>
+                            <span class="info-value" id="fetchCount">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Responsive Grid Demo Section -->
+        <section class="section">
+            <div class="section-wrapper">
+                <h2 class="section-title">Responsive Grid Demo</h2>
+                <p class="section-subtitle">This grid adapts to different screen sizes</p>
+
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3>📱 Mobile</h3>
+                        <p>1 column layout</p>
+                    </div>
+                    <div class="demo-card">
+                        <h3>📱 Tablet</h3>
+                        <p>2 column layout</p>
+                    </div>
+                    <div class="demo-card">
+                        <h3>🖥️ Desktop</h3>
+                        <p>3+ column layout</p>
+                    </div>
+                    <div class="demo-card">
+                        <h3>⚡ Flexible</h3>
+                        <p>Auto-responsive</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Task 3</h4>
+                <p>Master responsive design, interactive components, and API integration with modern web technologies.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#carousel">Carousel</a></li>
+                    <li><a href="#quiz">Quiz</a></li>
+                    <li><a href="#api">API</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Learning Resources</h4>
+                <p>Media queries, API fetching, event handling, and DOM manipulation</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ApexPlanet Web Development Internship - Task 3</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
