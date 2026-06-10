@@ -16,7 +16,11 @@ apexplanet-web-development-internship/
 │   ├── styles.css                  - Flexbox & CSS Grid layouts
 │   ├── script.js                   - Form validation & DOM manipulation
 │   └── README.md                   - Task documentation
-├── task-3-*/                       - Coming soon
+├── task-3-responsive-and-api/      ✓ Completed
+│   ├── index.html                  - Carousel, quiz, API sections
+│   ├── styles.css                  - Media queries & responsive design
+│   ├── script.js                   - Carousel, quiz, API fetching
+│   └── README.md                   - Task documentation
 ├── task-4-*/                       - Coming soon
 ├── task-5-*/                       - Coming soon
 └── README.md                       - This file
@@ -72,6 +76,32 @@ apexplanet-web-development-internship/
 - HTML5 (forms, semantic markup)
 - CSS3 (Flexbox, CSS Grid, media queries)
 - JavaScript (Form validation, DOM manipulation, LocalStorage API)
+
+---
+
+### Task 3: Responsive Design & API Integration ✅
+**Completed on:** June 10, 2026
+
+**Objectives:**
+- Gain advanced CSS skills with responsive design
+- Build complex interactive components
+- Learn API integration with external data sources
+
+**Features:**
+- Responsive design with 4 media query breakpoints
+- Interactive image carousel with auto-play
+- Multi-question quiz with progress tracking and results
+- API integration (4 different public APIs)
+- Loading states and error handling
+- Mobile hamburger menu
+- Touch-optimized interface
+- Real-time statistics
+
+**Technologies Used:**
+- HTML5 (semantic structure)
+- CSS3 (Media queries, responsive layouts, animations)
+- JavaScript (Carousel control, Quiz logic, API fetching, async/await)
+- Public APIs (Quotes, Jokes, Random Users, Activities)
 
 ---
 
