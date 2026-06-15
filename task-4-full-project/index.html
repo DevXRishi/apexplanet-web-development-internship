@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Project Implementation - Task 4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">💼</span>
+                <span class="logo-text">Task 4</span>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#portfolio" class="nav-link active">Portfolio</a></li>
+                <li><a href="#notes" class="nav-link">Notes</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Full Stack Web Development</h1>
+            <p class="hero-subtitle">Portfolio, Notes App & Product Listing with Modern Features</p>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- PORTFOLIO SECTION -->
+        <section class="section" id="portfolio">
+            <div class="section-wrapper">
+                <h2 class="section-title">Professional Portfolio</h2>
+                <p class="section-subtitle">Showcase your skills and completed projects</p>
+
+                <!-- About Section -->
+                <div class="portfolio-content">
+                    <div class="about-section">
+                        <h3 class="subsection-title">About Me</h3>
+                        <div class="about-grid">
+                            <div class="about-info">
+                                <p>Welcome to my professional portfolio! I'm a passionate web developer with expertise in HTML5, CSS3, and JavaScript. I specialize in creating responsive, user-friendly web applications.</p>
+                                <div class="skills">
+                                    <h4>Technical Skills</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">HTML5</span>
+                                        <span class="skill-tag">CSS3</span>
+                                        <span class="skill-tag">JavaScript</span>
+                                        <span class="skill-tag">Responsive Design</span>
+                                        <span class="skill-tag">API Integration</span>
+                                        <span class="skill-tag">Git & GitHub</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="about-stats">
+                                <div class="stat-box">
+                                    <span class="stat-number">4</span>
+                                    <span class="stat-label">Projects</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-number">2+</span>
+                                    <span class="stat-label">Years Exp.</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-number">100%</span>
+                                    <span class="stat-label">Responsive</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projects Section -->
+                    <div class="projects-section">
+                        <h3 class="subsection-title">Featured Projects</h3>
+                        <div class="projects-grid" id="projectsGrid">
+                            <!-- Projects will be inserted here -->
+                        </div>
+                    </div>
+
+                    <!-- Contact Section -->
+                    <div class="contact-section">
+                        <h3 class="subsection-title">Get In Touch</h3>
+                        <p>I'd love to hear from you! Send me a message and I'll respond as soon as possible.</p>
+                        <form id="portfolioContactForm" class="contact-form">
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" required class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Your Email" required class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Your Message" rows="5" required class="form-input"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                        </form>
+                        <div id="portfolioContactSuccess" class="success-message hidden">
+                            ✓ Message sent successfully!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOTES APP SECTION -->
+        <section class="section" id="notes">
+            <div class="section-wrapper">
+                <h2 class="section-title">Notes & Tasks Manager</h2>
+                <p class="section-subtitle">Create, edit, and save notes with local storage</p>
+
+                <div class="notes-container">
+                    <!-- Notes Controls -->
+                    <div class="notes-controls">
+                        <div class="notes-input-group">
+                            <input type="text" id="noteTitle" class="form-input" placeholder="Note Title">
+                            <textarea id="noteContent" class="form-textarea" placeholder="Write your note here..."></textarea>
+                        </div>
+                        <div class="notes-buttons">
+                            <button class="btn btn-primary" id="saveNoteBtn">Save Note</button>
+                            <button class="btn btn-secondary" id="clearNoteBtn">Clear</button>
+                        </div>
+
+                        <!-- Filter Options -->
+                        <div class="notes-filter">
+                            <label for="sortNotes" class="form-label">Sort by:</label>
+                            <select id="sortNotes" class="form-select">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="alphabetical">Alphabetical</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Notes Statistics -->
+                    <div class="notes-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Total Notes:</span>
+                            <span class="stat-value" id="totalNotes">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Characters:</span>
+                            <span class="stat-value" id="totalCharacters">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Notes Display -->
+                    <div class="notes-list" id="notesList">
+                        <!-- Notes will be displayed here -->
+                    </div>
+
+                    <!-- Empty State -->
+                    <div id="emptyNotesState" class="empty-state show">
+                        <p>📝 No notes yet. Create one to get started!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS SECTION -->
+        <section class="section" id="products">
+            <div class="section-wrapper">
+                <h2 class="section-title">Product Listing</h2>
+                <p class="section-subtitle">Filter and sort products by various criteria</p>
+
+                <div class="products-container">
+                    <!-- Filter & Sort Controls -->
+                    <div class="products-controls">
+                        <div class="control-group">
+                            <label for="categoryFilter" class="form-label">Category:</label>
+                            <select id="categoryFilter" class="form-select">
+                                <option value="all">All Categories</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="clothing">Clothing</option>
+                                <option value="home">Home & Garden</option>
+                                <option value="books">Books</option>
+                            </select>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="priceFilter" class="form-label">Price Range:</label>
+                            <select id="priceFilter" class="form-select">
+                                <option value="all">All Prices</option>
+                                <option value="0-50">$0 - $50</option>
+                                <option value="50-100">$50 - $100</option>
+                                <option value="100-200">$100 - $200</option>
+                                <option value="200+">$200+</option>
+                            </select>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="sortProducts" class="form-label">Sort by:</label>
+                            <select id="sortProducts" class="form-select">
+                                <option value="name-asc">Name (A-Z)</option>
+                                <option value="name-desc">Name (Z-A)</option>
+                                <option value="price-asc">Price (Low to High)</option>
+                                <option value="price-desc">Price (High to Low)</option>
+                                <option value="rating">Rating (High to Low)</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-secondary" id="resetFiltersBtn">Reset Filters</button>
+                    </div>
+
+                    <!-- Products Statistics -->
+                    <div class="products-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Showing:</span>
+                            <span class="stat-value" id="showingCount">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Total:</span>
+                            <span class="stat-value" id="totalCount">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be inserted here -->
+                    </div>
+
+                    <!-- No Results State -->
+                    <div id="noProductsState" class="empty-state hidden">
+                        <p>🛍️ No products found matching your filters.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Task 4</h4>
+                <p>A comprehensive project combining portfolio, notes management, and product listing with advanced filtering.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Features</h4>
+                <ul>
+                    <li>Professional Portfolio</li>
+                    <li>Notes with LocalStorage</li>
+                    <li>Product Filtering</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Technologies</h4>
+                <p>HTML5, CSS3, JavaScript, LocalStorage API, Responsive Design</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ApexPlanet Web Development Internship - Task 4</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
