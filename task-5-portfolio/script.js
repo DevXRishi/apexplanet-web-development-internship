@@ -13,6 +13,8 @@ function initializeApp() {
     initializeContactForm();
     initializeScrollAnimations();
     initializeIntersectionObserver();
+    // New: compute and display performance metrics
+    computePerformanceMetrics();
 }
 
 /* ============= Navigation ============= */
@@ -218,6 +220,34 @@ function initializeIntersectionObserver() {
         element.style.animation = 'none';
         observer.observe(element);
     });
+}
+
+/* ============= Performance Metrics ============= */
+function computePerformanceMetrics() {
+    // Use the Navigation Timing API (modern browsers) to get key timings
+    if (performance && performance.getEntriesByType) {
+        const [navEntry] = performance.getEntriesByType('navigation');
+        if (navEntry) {
+            const loadTime = Math.round(navEntry.loadEventEnd - navEntry.startTime);
+            const domContentLoaded = Math.round(navEntry.domContentLoadedEventEnd - navEntry.startTime);
+            // First Paint may be available via 'paint' entries
+            const paintEntries = performance.getEntriesByType('paint');
+            let firstPaint = 'N/A';
+            if (paintEntries && paintEntries.length) {
+                const fp = paintEntries.find(e => e.name === 'first-paint');
+                if (fp) {
+                    firstPaint = Math.round(fp.startTime);
+                }
+            }
+            // Update DOM if elements exist
+            const loadEl = document.getElementById('loadTime');
+            const domEl = document.getElementById('domContentLoaded');
+            const fpEl = document.getElementById('firstPaint');
+            if (loadEl) loadEl.textContent = loadTime.toString();
+            if (domEl) domEl.textContent = domContentLoaded.toString();
+            if (fpEl) fpEl.textContent = firstPaint.toString();
+        }
+    }
 }
 
 /* ============= Utility Functions ============= */
